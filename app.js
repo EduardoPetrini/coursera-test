@@ -11,12 +11,17 @@ function foodController($scope){
   $scope.resultMessage = '';
   $scope.classMessage = '';
   $scope.showIfEmptyItem = false;
+  $scope.borderRed = false;
+  $scope.borderGreen = false;
 
   $scope.checkIfTooMuch = function(){
+    $scope.borderRed = false;
+    $scope.borderGreen = false;
     $scope.showIfEmptyItem = false;
     if($scope.userInput == ""){
       $scope.resultMessage = "Please enter data first";
       $scope.classMessage = "red";
+      $scope.borderRed = true;
     }else{
         var inputArray = processInputText($scope.userInput);
         if(inputArray.length > 3){
@@ -25,6 +30,7 @@ function foodController($scope){
           $scope.resultMessage = "Enjoy!";
         }
         $scope.classMessage = "green";
+        $scope.borderGreen = true;
     }
   };
 
