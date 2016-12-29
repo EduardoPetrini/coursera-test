@@ -1,0 +1,119 @@
+body {
+  font-size: 1.2em;
+}
+
+div.tabs > a, div.tabs > button {
+  margin-right: 10px;
+  font-size: 1.2em;
+}
+
+div.tabs {
+  margin-bottom: 10px;
+}
+
+.activeTab {
+  font-weight: bold;
+}
+
+.container{
+  /*margin: 0 auto;*/
+  /*text-align: center;*/
+
+  margin-left: 10px;
+  padding: 5px;
+}
+
+a{
+  color: blue;
+  font-weight: lighter;
+  cursor: pointer;
+}
+
+.alink{
+  width: 200px;
+  text-align: center;
+}
+
+.alink:hover{
+  -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+  transition: transform 0.3s ease, opacity 0.3s;
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.li{
+  margin: 0 auto;
+  display: block;
+}
+
+.line{
+  display: inline-block;
+  padding: 5px;
+  /*margin-top: 5px;*/
+}
+
+.line:hover{
+  -webkit-transition: -webkit-transform 0.1s, opacity 0.1s;
+  transition: transform 0.1s ease, opacity 0.1s;
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  border: 1px solid gray;
+  border-radius: 3px;
+  cursor: pointer;
+  background-color: #CCE7FF;
+}
+.col{
+  float: left;
+  padding-left: 5px;
+}
+
+.col.name{
+  font-weight: bold;
+}
+.col.short{
+  font-weight: lighter;
+  color:gray;
+
+}
+.side-left{
+  width: 400px;
+  float:left;
+}
+
+.side-right{
+  width: 768px;
+  float:left;
+  margin-right: 30px;
+}
+
+a[ui-sref]{
+  color:black;
+}
+
+.line-item{
+  display: inline-block;
+  padding: 5px;
+}
+
+.col-item{
+  display: block;
+}
+
+.col-item.name{
+  font-weight: bold;
+}
+.col-item.description{
+  font-weight: lighter;
+  color: gray;
+}
+.ul-item{
+  /*float:right;
+  display: inline-block;*/
+}
+
+.loading-icon {
+  position: absolute;
+  left: 50%;
+  top: 10px;
+}
