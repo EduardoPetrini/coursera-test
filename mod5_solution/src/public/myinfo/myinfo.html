@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="col-md-offset-3 col-md-6 text-center">
+    <span ng-if="!myInfoCtrl.userInfo">
+      Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a>
+    </span>
+    <div class="info-container" ng-if="myInfoCtrl.userInfo">
+
+    <div class="info-block">
+      <span class="span-label">Hey</span>
+      <span class="span-value">{{myInfoCtrl.userInfo.name}} {{myInfoCtrl.userInfo.lastname}}</span>
+    </div>
+    <div class="info-block">
+      <span class="span-label">Your email</span>
+      <span class="span-value">{{myInfoCtrl.userInfo.email}}</span>
+    </div>
+    <div class="info-block">
+      <span class="span-label">Your phone</span>
+      <span class="span-value">{{myInfoCtrl.userInfo.phone}}</span>
+    </div>
+    <div class="info-block">
+      <span class="span-label">Your favorite menu item</span>
+      <div class="menu-item-tile">
+        <div class="row">
+          <div class="col-sm-5">
+            <div class="menu-item-photo">
+              <div>{{myInfoCtrl.userInfo.menuItem.short_name}}</div>
+              <img class="img-responsive" width="250" height="150" ng-src="{{myInfoCtrl.basePath}}/images/{{myInfoCtrl.userInfo.menuItem.short_name}}.jpg" alt="{{myInfoCtrl.userInfo.menuItem.name}}">
+            </div>
+            <div class="menu-item-price">{{myInfoCtrl.userInfo.menuItem.price_small | currency}}<span> {{myInfoCtrl.userInfo.menuItem.small_portion_name}}</span> {{myInfoCtrl.userInfo.menuItem.price_large | currency}} <span>{{myInfoCtrl.userInfo.menuItem.large_portion_name}}</span></div>
+          </div>
+          <div class="menu-item-description col-sm-7">
+            <h3 class="menu-item-title">{{myInfoCtrl.userInfo.menuItem.name}}</h3>
+            <p class="menu-item-details">{{myInfoCtrl.userInfo.menuItem.description}}</p>
+          </div>
+        </div>
+        <hr class="visible-xs">
+      </div>
+    </div>
+  </div>
+  </div>
+</div>

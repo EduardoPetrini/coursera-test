@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="col-md-offset-3 col-md-6">
+    <div class="">
+
+      <form class="" name="signupForm" novalidate>
+        <div class="form-group">
+          <label for="name">Your first name</label>
+          <input type="text" name="name" id="name" ng-model="signUpCtrl.name" placeholder="Type your name" class="form-control" required>
+          <span class="" ng-if="signupForm.name.$error.required && signupForm.name.$touched">The name is required</span>
+        </div>
+        <div class="form-group">
+          <label for="lastname">Your last name</label>
+          <input type="text" name="lastname" id="lastname" ng-model="signUpCtrl.lastname" placeholder="Type your last name" class="form-control" required>
+          <span class="" ng-if="signupForm.lastname.$error.required && signupForm.lastname.$touched">The last name is required</span>
+        </div>
+        <div class="form-group">
+          <label for="email">Your email</label>
+          <input type="email" name="email" id="email" ng-model="signUpCtrl.email" placeholder="Type your email" class="form-control" required>
+          <span class="" ng-if="signupForm.email.$error.required && signupForm.email.$touched">The email is required <br></span>
+          <span class="" ng-if="signupForm.email.$invalid && signupForm.email.$touched">The email must be like 'eat@cookies.ever'</span>
+        </div>
+        <div class="form-group">
+          <label for="phone">Your phone number</label>
+          <input type="text" pattern="[0-9]{3}\-[0-9]{3}\-[0-9]{4}" name="phone" id="phone" ng-model="signUpCtrl.phone" placeholder="Type your phone number '123-123-1234'" class="form-control" required>
+          <span class="" ng-if="signupForm.phone.$error.required && signupForm.phone.$touched">The phone number is required <br></span>
+          <span class="" ng-if="signupForm.phone.$invalid && signupForm.phone.$touched">The phone number must be in format '123-123-1234' <br></span>
+        </div>
+        <div class="form-group">
+          <label for="item">The number of your favorite menu item</label>
+          <input type="text" name="item" id="item" ng-model="signUpCtrl.item" placeholder="Type the number of your favorite menu item"
+                 class="form-control" ng-blur="signUpCtrl.checkMenuItem()" ng-click="signUpCtrl.disable = true;" required>
+          <span class="" ng-if="signupForm.item.$error.required && signupForm.item.$touched">The number of your favorite menu item is required</span>
+          <span ng-if="signUpCtrl.itemMsg">{{signUpCtrl.itemMsg}}</span>
+        </div>
+        <div class="form-group text-center">
+          <button type="submit" name="button" class="btn btn-success" ng-click="signUpCtrl.submit()" ng-disabled="signupForm.$invalid || signUpCtrl.disable">Send Info</button>
+          <span ng-if="signUpCtrl.successMsg"><br>{{signUpCtrl.successMsg}}</span>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
